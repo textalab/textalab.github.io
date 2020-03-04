@@ -59,18 +59,19 @@ El texto del bloque de Historia será lo primero que se mostrará al jugador y n
 Las **escenas** están definidas por encabezados de nivel dos (`##`). Las descripciones de las escenas pueden contener bloques [first-seen](#first-seen) y [anclas](#anclas) para cambiar la descripción según el [estado del jugador](#estado-del-jugador) o algún enlace que apunte a otra escena.
 
 Para mostrar un título distinto al nombre de la escena, puede envolver el nombre de la escena en un [ancla](#anclas) y especificar el texto que se mostrará en pantalla como el título del ancla.
+```
+## Primera escena
 
-`## Primera escena`
+Este es el texto que se muestra al jugador cuando visita esta escena.
 
-`Este es el texto que se muestra al jugador cuando visita esta escena.`
+## [Segunda escena]("Título de la segunda escena")
 
-`## [Segunda escena]("Título de la segunda escena")`
-
-`Esta es la segunda escena con un título de visualización diferente al especificado.`
+Esta es la segunda escena con un título de visualización diferente al especificado.
+```
 
 ## Escenas condicionales
 
-Los nombres de las escenas pueden ser anclas que contengan condiciinales que evalúan el [estado del jugador](#estado-del-jugador) las cuales deben cumplirse para ingresar a esa [escena](#escenas). El ancla no debe contener un [objetivo](#objetivos) ni un [conmutador](#palancas). Si se definen varias escenas con el mismo nombre, el jugador solo verá la escena para la cual su estado actual satisfaga todos las [condicionales](#condicionales) especificadas. Si el [estado del jugador](#estado-del-jugador) satisface las condicionales de más de una escena, solo verá el que tenga más variables activadas. Si dos escenas están satisfechas con el mismo número de variables activadas, el jugador verá la que se definió primero en el archivo de la historia.
+Los nombres de las escenas pueden ser anclas que contengan condicionales que evalúan el [estado del jugador](#estado-del-jugador) las cuales deben cumplirse para ingresar a esa [escena](#escenas). El ancla no debe contener un [objetivo](#objetivos) ni un [conmutador](#palancas). Si se definen varias escenas con el mismo nombre, el jugador solo verá la escena para la cual su estado actual satisfaga todos las [condicionales](#condicionales) especificadas. Si el [estado del jugador](#estado-del-jugador) satisface las condicionales de más de una escena, solo verá el que tenga más variables activadas. Si dos escenas están satisfechas con el mismo número de variables activadas, el jugador verá la que se definió primero en el archivo de la historia.
 
 Si solo se definen [escenas condicionales](#escenas-condicionales) y ninguna de ellas las satisface el [estado del jugador](#estado-del-jugador), esto se considera un error en el archivo de la historia. La forma más segura de evitar esto es tener siempre una versión no condicional de la escena a la que recurrir cuando ninguna de las versiones condicionales se satisfaga.
 
