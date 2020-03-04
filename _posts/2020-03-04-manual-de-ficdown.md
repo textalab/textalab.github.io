@@ -50,9 +50,11 @@ Un bloque **Historia** se define mediante un encabezado de nivel uno (`#`). El t
 
 El texto del bloque de Historia será lo primero que se mostrará al jugador y no debe contener ningún ancla en la descripción.
 
-`# [Un asombroso juego](/primera-escena)`
+```markdown
+# [Un asombroso juego](/primera-escena)
 
-`Bienvenido a un asombroso juego por *Algún Autor*.`
+Bienvenido a un asombroso juego por *Algún Autor*.
+```
 
 ## Escenas
 
@@ -60,7 +62,7 @@ Las **escenas** están definidas por encabezados de nivel dos (`##`). Las descri
 
 Para mostrar un título distinto al nombre de la escena, puede envolver el nombre de la escena en un [ancla](#anclas) y especificar el texto que se mostrará en pantalla como el título del ancla.
 
-```Markdown
+```markdown
 ## Primera escena
 
 Este es el texto que se muestra al jugador cuando visita esta escena.
@@ -76,29 +78,33 @@ Los nombres de las escenas pueden ser anclas que contengan condicionales que eva
 
 Si solo se definen [escenas condicionales](#escenas-condicionales) y ninguna de ellas las satisface el [estado del jugador](#estado-del-jugador), esto se considera un error en el archivo de la historia. La forma más segura de evitar esto es tener siempre una versión no condicional de la escena a la que recurrir cuando ninguna de las versiones condicionales se satisfaga.
 
-`## Mi escena`
+```markdown
+## Mi escena
 
-`Esta es la escena predeterminada que el jugador verá si ninguna de las versiones condicionales se cumple.`
+Esta es la escena predeterminada que el jugador verá si ninguna de las versiones condicionales se cumple.
 
-`## [Mi escena](?estado-uno)`
+## [Mi escena](?estado-uno)
 
-`El jugador verá esto si su variable "estado-uno" se ha activado, pero no si se ha activado "estado-dos" porque coincide con una escena condicional más específica a continuación.`
+El jugador verá esto si su variable "estado-uno" se ha activado, pero no si se ha activado "estado-dos" porque coincide con una escena condicional más específica a continuación.
 
-`## [Mi escena](?estado-uno&estado-dos "Título de escena alternativo")`
+## [Mi escena](?estado-uno&estado-dos "Título de escena alternativo")
 
-`El jugador verá esto si tanto el "estado-uno" como el "estado-dos" se han activado.`
+El jugador verá esto si tanto el "estado-uno" como el "estado-dos" se han activado.
+```
 
 ## First Seen
 
 **First Seen** o **visto por primera vez**. El texto descriptivo precedido por blockquote (`>`) solo se mostrará al jugador la primera vez que ingrese a la escena.
 
-`## Mi escena`
+```markdown
+## Mi escena
 
-`> Este texto solo se mostrará al jugador una vez.`
+> Este texto solo se mostrará al jugador una vez.
 
-`Este texto se mostrará al jugador cada vez que ingrese a la escena.`
+Este texto se mostrará al jugador cada vez que ingrese a la escena.
 
-`> Este texto solo se mostrará al jugador una vez.`
+> Este texto solo se mostrará al jugador una vez.
+```
 
 ## Acciones
 
@@ -112,9 +118,11 @@ La primera vez que se activa una acción, la variable activada será falsa dentr
 
 **NOTA:** *Si se conmutan múltiples variables al mismo tiempo asociadas a distintas acciones, las descripciones de cada una de las acciones se presentarán en el orden en que aparezcan en el archivo de la historia.*
 
-`### Mi estado`
+```markdown
+### Mi estado
 
-`Este texto se mostrará al jugador cada vez que active "mi-estado". Esta [no](?mi-estado) es la primera vez que se activó esta la acción.`
+Este texto se mostrará al jugador cada vez que active "mi-estado". Esta [no](?mi-estado) es la primera vez que se activó esta la acción.
+```
 
 ## Anclas
 
@@ -154,23 +162,25 @@ Si el texto dentro del ancla contiene un carácter de barra "\|" entonces el tex
 
 Las [anclas](#anclas) con solo [condicionales](#condicionales) y sin [objetivo](#objetivos) ni [conmutadores](#palancas) **no** se mostrarán como un enlace en el que se pueda hacer clic. Se pueden usar para cambiar fácilmente la descripción de una escena según el [estado del jugador](#estado-del-jugador).
 
-`## Mi escena`
+```markdown
+## Mi escena
 
-`La última palabra de este párrafo cambiará según el estado del jugador. La variable "mi-estado" es [verdadera|falsa] (?mi-estado).`
+La última palabra de este párrafo cambiará según el estado del jugador. La variable "mi-estado" es [verdadera|falsa] (?mi-estado).
 
-`Este es un texto que cambiará según el estado de varias variables: [Todo es verdadero|No todo es verdadero](?mi-estado&mi-estado-dos&mi-estado-tres).`
+Este es un texto que cambiará según el estado de varias variables: [Todo es verdadero|No todo es verdadero](?mi-estado&mi-estado-dos&mi-estado-tres).
 
-`Este es un texto que cambiará según reglas más complejas que verifican tanto los valores verdaderos como los falsos: [Satisfecho|No satisfecho](?mi-estado&!mi-estado-dos&!mi-estado-tres).`
+Este es un texto que cambiará según reglas más complejas que verifican tanto los valores verdaderos como los falsos: [Satisfecho|No satisfecho](?mi-estado&!mi-estado-dos&!mi-estado-tres).
 
-`Los enlaces al final de esta descripción también cambiarán según el estado del jugador.`
+Los enlaces al final de esta descripción también cambiarán según el estado del jugador.
 
-`[Esta elección siempre aparecerá](/primera-eleccion)`
+[Esta elección siempre aparecerá](/primera-eleccion)
 
-`[Esta elección solo aparece si mi-estado es verdadero](/segunda-eleccion?mi-estado)`
+[Esta elección solo aparece si mi-estado es verdadero](/segunda-eleccion?mi-estado)
 
-`[Esta elección solo aparece si otro estado es falso](/tercera-eleccion?!otro-estado)`
+[Esta elección solo aparece si otro estado es falso](/tercera-eleccion?!otro-estado)
 
-`[El texto de esta elección cambia según el valor de mi estado|Pero siempre aparecerá](/cuarta-eleccion?mi-estado)`
+[El texto de esta elección cambia según el valor de mi estado|Pero siempre aparecerá](/cuarta-eleccion?mi-estado)
+```
 
 ## Normalización
 
