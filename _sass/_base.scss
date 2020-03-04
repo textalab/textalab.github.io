@@ -43,7 +43,7 @@ ul, ol, dl, figure,
  * Articles
  */
 article {
-    background: #faf9f5;
+    background: #ffffff;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: $spacing-unit;
     padding: 3em 3em 1em;
@@ -58,7 +58,7 @@ article {
         }
 
         &:first-letter {
-            color: #b7b1a9;
+            color: #000000;
             display: inline-block;
             float: left;
             font-family: "Playfair Display";
@@ -75,7 +75,7 @@ article {
         }
 
         &:first-line {
-            color: #787065;
+            color: #000000;
             font-family: "Playfair Display SC";
             font-size: 1em;
             font-style: normal !important;
@@ -92,10 +92,10 @@ article {
 
     &:before {
         background: #faf9f5;
-        border: 1px solid #d9d6d0;
+        border: 1px solid #000000;
         border-radius: 50%;
-        box-shadow: 0 0 0 4px #faf9f5;
-        color: #a09a92;
+        box-shadow: 0 0 0 4px #ffffff;
+        color: #000000;
         content: "p";
         display: inline-block;
         font-family: libretto-icons;
@@ -142,9 +142,9 @@ article {
 .post-list {
     .post-header {
         &:before {
-            background: #eae9e6;
-            border-color: #faf9f5;
-            box-shadow: 0 0 0 4px #eae9e6;
+            background: #000000;
+            border-color: #ffffff;
+            box-shadow: 0 0 0 4px #000000;
         }
     }
 }

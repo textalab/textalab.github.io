@@ -4,13 +4,13 @@
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { margin: 0; padding: 0; }
 
 /** Basic styling */
-body { font: 400 17px/2 "Libre Baskerville", Baskerville, "Book Antiqua", Georgia, Times, serif; color: #363431; background-color: #f2f1ed; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; }
+body { font: 400 17px/1.3 "Libre Baskerville", Baskerville, "Book Antiqua", Georgia, Times, serif; color: #363431; background-color: #000000; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; }
 
 /** Set `margin-bottom` to maintain vertical rhythm */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; }
 
 /** Articles */
-article { background: #faf9f5; box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05); margin-bottom: 30px; padding: 3em 3em 1em; }
+article { background: #ffffff; box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05); margin-bottom: 30px; padding: 3em 3em 1em; }
 
 @media screen and (max-width: 600px) { article { padding: 1em 1em 0.3em; } }
 
@@ -24,7 +24,7 @@ article > .entry-content:first-line { color: #787065; font-family: "Playfair Dis
 
 .post-header { border-bottom: 1px solid #d9d6d0; margin-bottom: 2rem; text-align: center; }
 
-.post-header:before { background: #faf9f5; border: 1px solid #d9d6d0; border-radius: 50%; box-shadow: 0 0 0 4px #faf9f5; color: #a09a92; content: "p"; display: inline-block; font-family: libretto-icons; font-size: 21px; line-height: 21px; margin: 1rem auto 2rem; padding: 10px; text-shadow: none; }
+.post-header:before { background: #faf9f5; border: 1px solid #000000; border-radius: 50%; box-shadow: 0 0 0 4px #ffffff; color: #000000; content: "p"; display: inline-block; font-family: libretto-icons; font-size: 21px; line-height: 21px; margin: 1rem auto 2rem; padding: 10px; text-shadow: none; }
 
 .post-header > div { color: #a09a92; font-size: 17px; font-style: italic; }
 
@@ -34,7 +34,7 @@ article > .entry-content:first-line { color: #787065; font-family: "Playfair Dis
 
 .post-header > div:after { color: #d9d6d0; content: "`"; display: inline-block; font-family: libretto-icons; font-size: 24px; margin: 0 0.25rem; text-shadow: none; vertical-align: -6px; }
 
-.post-list .post-header:before { background: #eae9e6; border-color: #faf9f5; box-shadow: 0 0 0 4px #eae9e6; }
+.post-list .post-header:before { background: #000000; border-color: #ffffff; box-shadow: 0 0 0 4px #000000; }
 
 /** Images */
 img { max-width: 100%; vertical-align: middle; }
@@ -87,11 +87,11 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .icon > svg path { fill: #a09a92; }
 
 /** Site header */
-.site-header { background: #faf9f5; border-top: 5px solid #943526; border-bottom: 1px solid #e7e6e4; min-height: 56px; text-align: center; position: relative; }
+.site-header { background: #ffffff; border-top: 5px solid #000000; border-bottom: 1px solid #e7e6e4; min-height: 56px; text-align: center; position: relative; }
 
 .site-title { font-family: "Playfair Display"; font-size: 32px; font-weight: 300; line-height: 56px; margin-bottom: 0; }
 
-.site-title, .site-title:visited { color: #943526; }
+.site-title, .site-title:visited { color: #000000; }
 
 /** Site footer */
 .site-footer { border-top: 1px solid #e7e6e4; padding: 30px 0; }
