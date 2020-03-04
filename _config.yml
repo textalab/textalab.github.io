@@ -22,6 +22,7 @@ url: "https://textalab.github.io" # the base hostname & protocol for your site
 github_username:    textalab
 instagram_username: textagames
 twitter_username:   textagames_if
+itch_username:      textagames
 
 # Build settings
 markdown: kramdown

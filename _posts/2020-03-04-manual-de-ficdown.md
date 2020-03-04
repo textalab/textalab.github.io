@@ -3,25 +3,6 @@ layout: post
 title: "Manual de Ficdown en Español"
 thumbnail: https://i.ibb.co/XWf9xKw/ficdown.png
 ---
-
-### Tabla de Contenidos
-
-- [**Preliminar**](#preliminar)
-	+ [¿Qué es Ficdown?](#qué-es-ficdown)
-	+ [¿Por qué Ficdown?](#por-qué-ficdown)
-- [**Sintaxis**](#sintaxis)
-	+ [Historia](#historia)
-	+ [Escenas](#escenas)
-	+ [Escenas condicionales](#escenas-condicionales)
-	+ [First-Seen](#first-seen)
-	+ [Acciones](#acciones)
-	+ [Anclas](#anclas)
-	+ [Objetivos](#objetivos)
-	+ [Palancas](#palancas)
-	+ [Condicionales](#condicionales)
-	+ [Normalización](#normalización)
-	+ [Estado del Jugador](#estado-del-jugador)
-
 **ANTES DE LEER:** *En el texto que sigue se le dice **ancla** al texto encerrado entre corchetes (`[ancla]`) y **enlace** al texto encerrado entre paréntesis que sigue al ancla(`[ancla](enlace)`), también se le llama **ancla** a ambas cosas en conjunto. Cuando se habla de **descripción**, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.*
 
 # Preliminar
