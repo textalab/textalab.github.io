@@ -4,7 +4,7 @@ layout: default
 
 <header class="post-header">
 	<div>
-		<span>Posted on </span><span class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</span>
+		<span>Posteado el </span><span class="post-meta">{% include date_es.html date=page.date %}</span>
 	</div>
 
 	<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
@@ -20,7 +20,7 @@ layout: default
 	<div class="next">
 		{% if page.next.url %}
 		<a href="{{ site.baseurl }}{{ page.next.url }}">
-			<span>Next entry</span>
+			<span>Siguiente entrada</span>
 			{{ page.next.title }}
 		</a>
 		{% endif %}
@@ -29,7 +29,7 @@ layout: default
 	<div class="previous">
 		{% if page.previous.url %}
 		<a href="{{ site.baseurl }}{{ page.previous.url }}">
-			<span>Previous entry</span>
+			<span>Entrada previa</span>
 			{{ page.previous.title }}
 		</a>
 		{% endif %}

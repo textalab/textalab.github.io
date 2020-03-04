@@ -10,7 +10,7 @@ layout: default
 			<article>
 				<header class="post-header">
 					<div>
-						<span>Posted on </span><span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
+						<span>Posteado el </span><span class="post-meta">{% include date_es.html date=post.date %}</span>
 					</div>
 
 					<h2>
@@ -26,6 +26,6 @@ layout: default
 		{% endfor %}
 	</ul>
 
-	<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+	<!--<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>-->
 
 </div>
