@@ -6,10 +6,10 @@ thumbnail: https://i.ibb.co/XWf9xKw/ficdown.png
 
 ### Tabla de Contenidos
 
-- [Preliminar](#preliminar)
+- [**Preliminar**](#preliminar)
 	+ [¿Qué es Ficdown?](#qué-es-ficdown)
 	+ [¿Por qué Ficdown?](#por-qué-ficdown)
-- [Sintaxis](#sintaxis)
+- [**Sintaxis**](#sintaxis)
 	+ [Historia](#historia)
 	+ [Escenas](#escenas)
 	+ [Escenas condicionales](#escenas-condicionales)
@@ -59,7 +59,8 @@ El texto del bloque de Historia será lo primero que se mostrará al jugador y n
 Las **escenas** están definidas por encabezados de nivel dos (`##`). Las descripciones de las escenas pueden contener bloques [first-seen](#first-seen) y [anclas](#anclas) para cambiar la descripción según el [estado del jugador](#estado-del-jugador) o algún enlace que apunte a otra escena.
 
 Para mostrar un título distinto al nombre de la escena, puede envolver el nombre de la escena en un [ancla](#anclas) y especificar el texto que se mostrará en pantalla como el título del ancla.
-```
+
+```Markdown
 ## Primera escena
 
 Este es el texto que se muestra al jugador cuando visita esta escena.
