@@ -241,6 +241,7 @@
     a {
         color: $grey-color;
         font-style: italic;
+        text-decoration: underline;
     }
 }
 
@@ -251,7 +252,7 @@
  */
 .table-of-contents {
     h1 {
-        color: $brand-color;
+        color: #000000;
         display: block;
         font-family: "Playfair Display";
         font-size: 44px;
