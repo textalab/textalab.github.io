@@ -2,60 +2,200 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Textalab</title>
-    <description>Experimentos lúdicos
+    <description>Textalab, experimentos lúdicos para la web.
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Mar 2020 22:48:45 -0400</pubDate>
-    <lastBuildDate>Tue, 03 Mar 2020 22:48:45 -0400</lastBuildDate>
+    <pubDate>Wed, 04 Mar 2020 20:11:16 -0400</pubDate>
+    <lastBuildDate>Wed, 04 Mar 2020 20:11:16 -0400</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Manual de Ficdown en Español</title>
+        <description>&lt;p&gt;&lt;strong&gt;ANTES DE LEER:&lt;/strong&gt; &lt;em&gt;En el texto que sigue se le dice &lt;strong&gt;ancla&lt;/strong&gt; al texto encerrado entre corchetes (&lt;code class=&quot;highlighter-rouge&quot;&gt;[ancla]&lt;/code&gt;) y &lt;strong&gt;enlace&lt;/strong&gt; al texto encerrado entre paréntesis que sigue al ancla(&lt;code class=&quot;highlighter-rouge&quot;&gt;[ancla](enlace)&lt;/code&gt;), también se le llama &lt;strong&gt;ancla&lt;/strong&gt; a ambas cosas en conjunto. Cuando se habla de &lt;strong&gt;descripción&lt;/strong&gt;, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h1 id=&quot;preliminar&quot;&gt;Preliminar&lt;/h1&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h2 id=&quot;qué-es-ficdown&quot;&gt;¿Qué es Ficdown?&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;https://ficdown.com/&quot;&gt;Ficdown&lt;/a&gt; es un conjunto de estándares que utiliza la sintaxis del formato Markdown para crear ficción interactiva basada en elecciones . El formateo del texto se realiza utilizando Markdown estándar, con algunos elementos que adquieren propiedades adicionales (por ejemplo, se utilizan encabezados de nivel dos &lt;code class=&quot;highlighter-rouge&quot;&gt;##&lt;/code&gt; para separar las escenas).&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;por-qué-ficdown&quot;&gt;¿Por qué Ficdown?&lt;/h2&gt;
 
+&lt;p&gt;Existen muchos sistemas para crear ficción interactiva basada en elecciones. Muchos de esos sistemas implican aprender un nuevo lenguaje de secuencias de comandos y requieren el uso de entornos de desarrollo especializados (ya sea en línea o instalados en su computadora). La mayoría de ellos producen juegos que requieren Javascript y sólo se pueden jugar en un navegador web.&lt;/p&gt;
+
+&lt;p&gt;El autor de Ficdown, &lt;a href=&quot;https://rudism.com/&quot;&gt;Rudis Muiznieks&lt;/a&gt;, lo creó por tres razones:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Poder escribir ficción interactiva en el editor de texto de su elección.&lt;/li&gt;
+  &lt;li&gt;Ejecutar ficción interactiva en dispositivos tan limitados como los ereaders, que no cuentan con soporte para Javascript o una conexión a Internet.&lt;/li&gt;
+  &lt;li&gt;Usar Markdown en lugar de aprender un nuevo lenguaje de secuencias de comandos.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Usando Ficdown, puedes concentrarte en la escritura. Ficdown solo usa la sintaxis Markdown existente para las definiciones del juego, para que puedas escribir en el editor que desees y no tengas que aprender ningún nuevo lenguaje de secuencias de comandos. Y aunque las historias de Ficdown se pueden reproducir de forma interactiva en un navegador web, también se pueden convertir a formato estándar de libros electrónicos o HTML estático para jugar sin conexión.&lt;/p&gt;
+
+&lt;h1 id=&quot;syntaxis&quot;&gt;Syntaxis&lt;/h1&gt;
+
+&lt;h2 id=&quot;historia&quot;&gt;Historia&lt;/h2&gt;
+
+&lt;p&gt;Un bloque &lt;strong&gt;Historia&lt;/strong&gt; se define mediante un encabezado de nivel uno (&lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt;). El título de la historia debe ser un &lt;a href=&quot;#anclas&quot;&gt;ancla&lt;/a&gt; que se vincule con la primera &lt;a href=&quot;#escenas&quot;&gt;escena&lt;/a&gt;. El ancla no debe contener &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt; ni &lt;a href=&quot;#palancas&quot;&gt;conmutadores&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;El texto del bloque de Historia será lo primero que se mostrará al jugador y no debe contener ningún ancla en la descripción.&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;# [Un asombroso juego](/primera-escena)&lt;/span&gt;
+
+Bienvenido a un asombroso juego por &lt;span class=&quot;ge&quot;&gt;*Algún Autor*&lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;escenas&quot;&gt;Escenas&lt;/h2&gt;
+
+&lt;p&gt;Las &lt;strong&gt;escenas&lt;/strong&gt; están definidas por encabezados de nivel dos (&lt;code class=&quot;highlighter-rouge&quot;&gt;##&lt;/code&gt;). Las descripciones de las escenas pueden contener bloques &lt;a href=&quot;#first-seen&quot;&gt;first-seen&lt;/a&gt; y &lt;a href=&quot;#anclas&quot;&gt;anclas&lt;/a&gt; para cambiar la descripción según el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt; o algún enlace que apunte a otra escena.&lt;/p&gt;
+
+&lt;p&gt;Para mostrar un título distinto al nombre de la escena, puede envolver el nombre de la escena en un &lt;a href=&quot;#anclas&quot;&gt;ancla&lt;/a&gt; y especificar el texto que se mostrará en pantalla como el título del ancla.&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;## Primera escena&lt;/span&gt;
+
+Este es el texto que se muestra al jugador cuando visita esta escena.
+
+&lt;span class=&quot;gu&quot;&gt;## [Segunda escena](&quot;Título de la segunda escena&quot;)&lt;/span&gt;
+
+Esta es la segunda escena con un título de visualización diferente al especificado.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;escenas-condicionales&quot;&gt;Escenas condicionales&lt;/h2&gt;
+
+&lt;p&gt;Los nombres de las escenas pueden ser anclas que contengan condicionales que evalúan el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt; las cuales deben cumplirse para ingresar a esa &lt;a href=&quot;#escenas&quot;&gt;escena&lt;/a&gt;. El ancla no debe contener un &lt;a href=&quot;#objetivos&quot;&gt;objetivo&lt;/a&gt; ni un &lt;a href=&quot;#palancas&quot;&gt;conmutador&lt;/a&gt;. Si se definen varias escenas con el mismo nombre, el jugador solo verá la escena para la cual su estado actual satisfaga todos las &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt; especificadas. Si el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt; satisface las condicionales de más de una escena, solo verá el que tenga más variables activadas. Si dos escenas están satisfechas con el mismo número de variables activadas, el jugador verá la que se definió primero en el archivo de la historia.&lt;/p&gt;
+
+&lt;p&gt;Si solo se definen &lt;a href=&quot;#escenas-condicionales&quot;&gt;escenas condicionales&lt;/a&gt; y ninguna de ellas las satisface el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt;, esto se considera un error en el archivo de la historia. La forma más segura de evitar esto es tener siempre una versión no condicional de la escena a la que recurrir cuando ninguna de las versiones condicionales se satisfaga.&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;## Mi escena&lt;/span&gt;
+
+Esta es la escena predeterminada que el jugador verá si ninguna de las versiones condicionales se cumple.
+
+&lt;span class=&quot;gu&quot;&gt;## [Mi escena](?estado-uno)&lt;/span&gt;
+
+El jugador verá esto si su variable &quot;estado-uno&quot; se ha activado, pero no si se ha activado &quot;estado-dos&quot; porque coincide con una escena condicional más específica a continuación.
+
+&lt;span class=&quot;gu&quot;&gt;## [Mi escena](?estado-uno&amp;amp;estado-dos &quot;Título de escena alternativo&quot;)&lt;/span&gt;
+
+El jugador verá esto si tanto el &quot;estado-uno&quot; como el &quot;estado-dos&quot; se han activado.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;first-seen&quot;&gt;First Seen&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;First Seen&lt;/strong&gt; o &lt;strong&gt;visto por primera vez&lt;/strong&gt;. El texto descriptivo precedido por blockquote (&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;) solo se mostrará al jugador la primera vez que ingrese a la escena.&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;## Mi escena&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;
+&amp;gt; Este texto solo se mostrará al jugador una vez.&lt;/span&gt;
+
+Este texto se mostrará al jugador cada vez que ingrese a la escena.
+&lt;span class=&quot;gt&quot;&gt;
+&amp;gt; Este texto solo se mostrará al jugador una vez.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;acciones&quot;&gt;Acciones&lt;/h2&gt;
+
+&lt;p&gt;Las &lt;strong&gt;acciones&lt;/strong&gt; se definen mediante encabezados de nivel tres. Cuando se &lt;a href=&quot;#palancas&quot;&gt;alterna&lt;/a&gt; una &lt;a href=&quot;#estado-del-jugador&quot;&gt;variable de estado&lt;/a&gt; cuyo nombre coincide con una acción, la descripción de la acción se antepondrá a la descripción de la siguiente escena que ve el jugador. Los nombres de las acciones no deben ser &lt;a href=&quot;#anclas&quot;&gt;anclas&lt;/a&gt;. Las anclas solo se pueden usar dentro de la descripción de la acción para cambiar el texto según el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt;, es decir, sólo se aceptan anclas con &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Las acciones se corresponden con las variables de estado en función de su nombre &lt;a href=&quot;#normalización&quot;&gt;normalizado&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Las acciones serán activadas al &lt;a href=&quot;#palancas&quot;&gt;conmutar&lt;/a&gt; la variable asociada, incluso si esa variable se ha activado anteriormente.&lt;/p&gt;
+
+&lt;p&gt;La primera vez que se activa una acción, la variable activada será falsa dentro de la acción misma. En activaciones posteriores, la variable será verdadera. Esto se puede usar para diferenciar la primera vez que se muestra una acción.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTA:&lt;/strong&gt; &lt;em&gt;Si se conmutan múltiples variables al mismo tiempo asociadas a distintas acciones, las descripciones de cada una de las acciones se presentarán en el orden en que aparezcan en el archivo de la historia.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;### Mi estado&lt;/span&gt;
+
+Este texto se mostrará al jugador cada vez que active &quot;mi-estado&quot;. Esta &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;?mi-estado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; es la primera vez que se activó esta la acción.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;anclas&quot;&gt;Anclas&lt;/h2&gt;
+
+&lt;p&gt;Las &lt;strong&gt;anclas&lt;/strong&gt; se utilizan dentro de las descripciones de las &lt;a href=&quot;#escenas&quot;&gt;escenas&lt;/a&gt; para vincular a los jugadores con otras escenas de la historia y para cambiar el texto de la descripción según el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Las anclas con un &lt;a href=&quot;#objetivos&quot;&gt;objetivo&lt;/a&gt; o &lt;a href=&quot;#palancas&quot;&gt;conmutador&lt;/a&gt; se mostrarán al jugador como un enlace en el que se puede hacer clic. Las anclas que solo contienen &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt; se representarán como texto normal.&lt;/p&gt;
+
+&lt;p&gt;Las anclas pueden contener cualquier cantidad de &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt; y &lt;a href=&quot;#palancas&quot;&gt;conmutadores&lt;/a&gt;, pero pueden contener como máximo un &lt;a href=&quot;#objetivos&quot;&gt;objetivo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;El texto dentro del ancla no puede contener otras anclas. Para una modificación más compleja de las descripciones de escenas, en su lugar debe usar &lt;a href=&quot;#escenas-condicionales&quot;&gt;escenas condicionales&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Texto a mostrar cuando se cumplen las condiciones|Texto a mostrar cuando no se cumplen las condiciones](/escena-objetivo?primera-condicional&amp;amp;segunda-condicional#palanca-uno+palanca-dos)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;objetivos&quot;&gt;Objetivos&lt;/h2&gt;
+
+&lt;p&gt;El &lt;strong&gt;objetivo&lt;/strong&gt; dentro de un &lt;a href=&quot;#anclas&quot;&gt;ancla&lt;/a&gt; siempre debe ir al principio del enlace y estar precedido por un carácter de barra inclinada “/”. El objetivo debe ser el nombre &lt;a href=&quot;#normalización&quot;&gt;normalizado&lt;/a&gt; de la &lt;a href=&quot;#escenas&quot;&gt;escena&lt;/a&gt; a la que se vincula. Las &lt;a href=&quot;#anclas&quot;&gt;anclas&lt;/a&gt; con un objetivo se mostrarán como un enlace en el que se puede hacer clic para el jugador. Cuando se hace clic en el enlace, se moverá a la &lt;a href=&quot;#escenas&quot;&gt;escena&lt;/a&gt; especificada por el objetivo.&lt;/p&gt;
+
+&lt;p&gt;Las anclas pueden tener como máximo un objetivo.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Ir a la escena dos](/escena-dos)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;palancas&quot;&gt;Palancas&lt;/h2&gt;
+
+&lt;p&gt;Las &lt;strong&gt;palancas&lt;/strong&gt; o &lt;strong&gt;conmutadores&lt;/strong&gt; se utilizan en las &lt;a href=&quot;#anclas&quot;&gt;anclas&lt;/a&gt; para establecer las variables de &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt; en verdadero y para desencadenar &lt;a href=&quot;#acciones&quot;&gt;acciones&lt;/a&gt;. Están precedidos en el enlace de un &lt;a href=&quot;#anclas&quot;&gt;ancla&lt;/a&gt; con un hash “#”. Se pueden añadir múltiples conmutadores con un carácter más “+”. Siempre deben añadirse al final del enlace, después del objetivo y las condicionales.&lt;/p&gt;
+
+&lt;p&gt;Las anclas con conmutadores siempre se mostrarán como enlaces en los que se puede hacer clic. Si el ancla no tiene un objetivo, al hacer clic en el enlace cambiará el estado de las variables y luego redirigirá al jugador a la escena actual.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Conmutar mis variables](#palanca-uno+palanca-dos)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTA:&lt;/strong&gt; &lt;em&gt;Lo dicho en el último párrafo corresponde si se quiere exportar a EPUB o HTML ESTÁTICO, pero para la versión WEB DINÁMICA, por lo menos en Ficdownjs 0.9.1, al añadir un ancla que solo contenga conmutadores se debe especificar también como mínimo la escena actual como objetivo.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;condicionales&quot;&gt;Condicionales&lt;/h2&gt;
+
+&lt;p&gt;Las &lt;strong&gt;condicionales&lt;/strong&gt; se especifican en el enlace del ancla, entre el &lt;a href=&quot;#objetivos&quot;&gt;objetivo&lt;/a&gt; y los &lt;a href=&quot;#palancas&quot;&gt;conmutadores&lt;/a&gt;. Están precedidos por un signo de interrogación “?” y delimitados por símbolos “&amp;amp;”. Se utilizan para ocultar o cambiar el texto mostrado en función del &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado actual del jugador&lt;/a&gt;. Las condicionales se especifican con el nombre de la variable que se desea evaluar como verdadera, o el nombre de la variable precedido por un signo de exclamación “!” para evaluar si el valor es falso.&lt;/p&gt;
+
+&lt;p&gt;Si el texto dentro del ancla contiene un carácter de barra “|” entonces el texto a la izquierda se mostrará si el estado actual del jugador cumple con todas las condicionales, y el texto a la derecha se mostrará si el estado actual del jugador no cumple con todas las condicionales. El texto del ancla que no contenga ninguna barra se ocultará por completo si el estado del jugador no cumple con las condicionales, y el texto del ancla sin nada a la izquierda de la tubería se ocultará si el estado del jugador cumple con los condicionales.&lt;/p&gt;
+
+&lt;p&gt;Las &lt;a href=&quot;#anclas&quot;&gt;anclas&lt;/a&gt; con solo &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt; y sin &lt;a href=&quot;#objetivos&quot;&gt;objetivo&lt;/a&gt; ni &lt;a href=&quot;#palancas&quot;&gt;conmutadores&lt;/a&gt; &lt;strong&gt;no&lt;/strong&gt; se mostrarán como un enlace en el que se pueda hacer clic. Se pueden usar para cambiar fácilmente la descripción de una escena según el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;## Mi escena&lt;/span&gt;
+
+La última palabra de este párrafo cambiará según el estado del jugador. La variable &quot;mi-estado&quot; es &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;verdadera|falsa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;?mi-estado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;.
+
+Este es un texto que cambiará según el estado de varias variables: &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Todo es verdadero|No todo es verdadero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;?mi-estado&amp;amp;mi-estado-dos&amp;amp;mi-estado-tres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;.
+
+Este es un texto que cambiará según reglas más complejas que verifican tanto los valores verdaderos como los falsos: &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Satisfecho|No satisfecho&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;?mi-estado&amp;amp;!mi-estado-dos&amp;amp;!mi-estado-tres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;.
+
+Los enlaces al final de esta descripción también cambiarán según el estado del jugador.
+
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Esta elección siempre aparecerá&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;/primera-eleccion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Esta elección solo aparece si mi-estado es verdadero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;/segunda-eleccion?mi-estado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Esta elección solo aparece si otro estado es falso&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;/tercera-eleccion?!otro-estado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;El texto de esta elección cambia según el valor de mi estado|Pero siempre aparecerá&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;/cuarta-eleccion?mi-estado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;normalización&quot;&gt;Normalización&lt;/h2&gt;
+
+&lt;p&gt;Los nombres de &lt;a href=&quot;#escenas&quot;&gt;escena&lt;/a&gt; y &lt;a href=&quot;#acciones&quot;&gt;acción&lt;/a&gt; se normalizan eliminando todos los caracteres no alfanuméricos, convirtiendo todo a minúsculas y reemplazando los espacios con guiones. Algunos ejemplos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“Escena” se convertiría en “escena”&lt;/li&gt;
+  &lt;li&gt;“Mi escena” se convertiría en “mi-escena”&lt;/li&gt;
+  &lt;li&gt;“Big Bob’s House” se convertiría en “big-bobs-house”&lt;/li&gt;
+  &lt;li&gt;“Apartamento/Habitación 123” se convertiría en “apartamentohabitacin-123”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La &lt;strong&gt;normalización&lt;/strong&gt; se aplica a los nombres de las escenas cuando se usan como objetivo en las anclas, y en los nombres de las acciones cuando se activan mediante conmutadores.&lt;/p&gt;
+
+&lt;h2 id=&quot;estado-del-jugador&quot;&gt;Estado del jugador&lt;/h2&gt;
+
+&lt;p&gt;El &lt;strong&gt;estado del jugador&lt;/strong&gt; es una colección de variables booleanas que se asignan al jugador y se rastrean a lo largo del juego. Todas las variables de estado del jugador comienzan en falso. Las variables se establecen en verdadero cuando un jugador hace clic en un enlace que contiene esa variable como una &lt;a href=&quot;#palancas&quot;&gt;palanca&lt;/a&gt;. Una vez activada, la variable de estado será verdadera durante el resto del juego (no se puede restablecer a falso).&lt;/p&gt;
+
+&lt;p&gt;No es necesario declarar variables previamente en ninguna parte de su historia. Solo debe ponerlas donde las vaya a usar en las anclas de su historia.&lt;/p&gt;
+
+&lt;p&gt;Las variables se utilizan en anclas condicionales para cambiar el texto que se muestra u ocultarlo por completo.&lt;/p&gt;
+
+&lt;p&gt;Las anclas condicionales envueltas alrededor de los nombres de las escenas se usan para definir &lt;a href=&quot;#escenas-condicionales&quot;&gt;escenas condicionales&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTA:&lt;/strong&gt; &lt;em&gt;Al compilar la historia en EPUB, puede pasar el indicador DEBUG que mostrará la información del estado del jugador en la parte inferior de cada página de su historia. Esto puede ser útil para rastrear enlaces o historias que no se comportan de la manera que se esperaba.&lt;/em&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 01 Sep 2016 06:11:11 -0400</pubDate>
-        <link>http://localhost:4000/2016/09/01/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/01/welcome-to-jekyll.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Bacon ipsum</title>
-        <description>&lt;p&gt;Bacon ipsum dolor amet fatback biltong cow kielbasa. Ground &lt;em&gt;round&lt;/em&gt; jowl picanha &lt;strong&gt;short ribs&lt;/strong&gt;, short loin shoulder flank ham hock. Fatback pork shoulder, frankfurter kevin spare ribs alcatra shank picanha ball tip.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;capicola-leberkas-fatback-kielbasa-strip-steak&quot;&gt;Capicola leberkas fatback, kielbasa strip steak.&lt;/h2&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Chicken biltong ribeye, pig cupim filet mignon sausage.&lt;/p&gt;
-
-&lt;figure&gt;
-	&lt;img src=&quot;/assets/earth.jpg&quot; alt=&quot;image&quot; /&gt;
-	&lt;figcaption&gt;
-		There is nothing on this earth more to be prized than true friendship.
-	&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Swine brisket tongue pork cow pork loin beef ribs turkey flank rump strip steak.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 20 Aug 2016 06:11:11 -0400</pubDate>
-        <link>http://localhost:4000/2016/08/20/bacon-ipsum.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/08/20/bacon-ipsum.html</guid>
+        <pubDate>Wed, 04 Mar 2020 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2020/03/04/manual-de-ficdown.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/03/04/manual-de-ficdown.html</guid>
         
         
       </item>
