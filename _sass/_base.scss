@@ -52,7 +52,7 @@ article {
     padding: 3em 3em 1em;
 
     @include media-query($on-palm) {
-        padding: 1em 1em 0.3em;
+        padding: 1.5em 1em 0.3em;
     }
 
     > .entry-content {
