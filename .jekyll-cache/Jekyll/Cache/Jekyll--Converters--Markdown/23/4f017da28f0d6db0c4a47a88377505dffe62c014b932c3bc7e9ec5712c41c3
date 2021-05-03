@@ -1,10 +1,10 @@
-I"E<p><strong>ANTES DE LEER:</strong> <em>En el texto que sigue se le dice <strong>ancla</strong> al texto encerrado entre corchetes (<code class="highlighter-rouge">[ancla]</code>) y <strong>enlace</strong> al texto encerrado entre paréntesis que sigue al ancla(<code class="highlighter-rouge">[ancla](enlace)</code>), también se le llama <strong>ancla</strong> a ambas cosas en conjunto. Cuando se habla de <strong>descripción</strong>, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.</em></p>
+I"5E<p><strong>ANTES DE LEER:</strong> <em>En el texto que sigue se le dice <strong>ancla</strong> al texto encerrado entre corchetes (<code class="language-plaintext highlighter-rouge">[ancla]</code>) y <strong>enlace</strong> al texto encerrado entre paréntesis que sigue al ancla(<code class="language-plaintext highlighter-rouge">[ancla](enlace)</code>), también se le llama <strong>ancla</strong> a ambas cosas en conjunto. Cuando se habla de <strong>descripción</strong>, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.</em></p>
 
 <h1 id="preliminar">Preliminar</h1>
 
 <h2 id="qué-es-ficdown">¿Qué es Ficdown?</h2>
 
-<p><a href="https://ficdown.com/">Ficdown</a> es un conjunto de estándares que utiliza la sintaxis del formato Markdown para crear ficción interactiva basada en elecciones . El formateo del texto se realiza utilizando Markdown estándar, con algunos elementos que adquieren propiedades adicionales (por ejemplo, se utilizan encabezados de nivel dos <code class="highlighter-rouge">##</code> para separar las escenas).</p>
+<p><a href="https://ficdown.com/">Ficdown</a> es un conjunto de estándares que utiliza la sintaxis del formato Markdown para crear ficción interactiva basada en elecciones . El formateo del texto se realiza utilizando Markdown estándar, con algunos elementos que adquieren propiedades adicionales (por ejemplo, se utilizan encabezados de nivel dos <code class="language-plaintext highlighter-rouge">##</code> para separar las escenas).</p>
 
 <h2 id="por-qué-ficdown">¿Por qué Ficdown?</h2>
 
@@ -24,7 +24,7 @@
 
 <h2 id="historia">Historia</h2>
 
-<p>Un bloque <strong>Historia</strong> se define mediante un encabezado de nivel uno (<code class="highlighter-rouge">#</code>). El título de la historia debe ser un <a href="#anclas">ancla</a> que se vincule con la primera <a href="#escenas">escena</a>. El ancla no debe contener <a href="#condicionales">condicionales</a> ni <a href="#palancas">conmutadores</a>.</p>
+<p>Un bloque <strong>Historia</strong> se define mediante un encabezado de nivel uno (<code class="language-plaintext highlighter-rouge">#</code>). El título de la historia debe ser un <a href="#anclas">ancla</a> que se vincule con la primera <a href="#escenas">escena</a>. El ancla no debe contener <a href="#condicionales">condicionales</a> ni <a href="#palancas">conmutadores</a>.</p>
 
 <p>El texto del bloque de Historia será lo primero que se mostrará al jugador y no debe contener ningún ancla en la descripción.</p>
 
@@ -35,7 +35,7 @@ Bienvenido a un asombroso juego por <span class="ge">*Algún Autor*</span>.
 
 <h2 id="escenas">Escenas</h2>
 
-<p>Las <strong>escenas</strong> están definidas por encabezados de nivel dos (<code class="highlighter-rouge">##</code>). Las descripciones de las escenas pueden contener bloques <a href="#first-seen">first-seen</a> y <a href="#anclas">anclas</a> para cambiar la descripción según el <a href="#estado-del-jugador">estado del jugador</a> o algún enlace que apunte a otra escena.</p>
+<p>Las <strong>escenas</strong> están definidas por encabezados de nivel dos (<code class="language-plaintext highlighter-rouge">##</code>). Las descripciones de las escenas pueden contener bloques <a href="#first-seen">first-seen</a> y <a href="#anclas">anclas</a> para cambiar la descripción según el <a href="#estado-del-jugador">estado del jugador</a> o algún enlace que apunte a otra escena.</p>
 
 <p>Para mostrar un título distinto al nombre de la escena, puede envolver el nombre de la escena en un <a href="#anclas">ancla</a> y especificar el texto que se mostrará en pantalla como el título del ancla.</p>
 
@@ -69,7 +69,7 @@ El jugador verá esto si tanto el "estado-uno" como el "estado-dos" se han activ
 
 <h2 id="first-seen">First Seen</h2>
 
-<p><strong>First Seen</strong> o <strong>visto por primera vez</strong>. El texto descriptivo precedido por blockquote (<code class="highlighter-rouge">&gt;</code>) solo se mostrará al jugador la primera vez que ingrese a la escena.</p>
+<p><strong>First Seen</strong> o <strong>visto por primera vez</strong>. El texto descriptivo precedido por blockquote (<code class="language-plaintext highlighter-rouge">&gt;</code>) solo se mostrará al jugador la primera vez que ingrese a la escena.</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Mi escena</span>
 <span class="gt">
@@ -107,7 +107,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <p>El texto dentro del ancla no puede contener otras anclas. Para una modificación más compleja de las descripciones de escenas, en su lugar debe usar <a href="#escenas-condicionales">escenas condicionales</a>.</p>
 
-<p><code class="highlighter-rouge">[Texto a mostrar cuando se cumplen las condiciones|Texto a mostrar cuando no se cumplen las condiciones](/escena-objetivo?primera-condicional&amp;segunda-condicional#palanca-uno+palanca-dos)</code></p>
+<p><code class="language-plaintext highlighter-rouge">[Texto a mostrar cuando se cumplen las condiciones|Texto a mostrar cuando no se cumplen las condiciones](/escena-objetivo?primera-condicional&amp;segunda-condicional#palanca-uno+palanca-dos)</code></p>
 
 <h2 id="objetivos">Objetivos</h2>
 
@@ -115,7 +115,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <p>Las anclas pueden tener como máximo un objetivo.</p>
 
-<p><code class="highlighter-rouge">[Ir a la escena dos](/escena-dos)</code></p>
+<p><code class="language-plaintext highlighter-rouge">[Ir a la escena dos](/escena-dos)</code></p>
 
 <h2 id="palancas">Palancas</h2>
 
@@ -123,7 +123,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <p>Las anclas con conmutadores siempre se mostrarán como enlaces en los que se puede hacer clic. Si el ancla no tiene un objetivo, al hacer clic en el enlace cambiará el estado de las variables y luego redirigirá al jugador a la escena actual.</p>
 
-<p><code class="highlighter-rouge">[Conmutar mis variables](#palanca-uno+palanca-dos)</code></p>
+<p><code class="language-plaintext highlighter-rouge">[Conmutar mis variables](#palanca-uno+palanca-dos)</code></p>
 
 <p><strong>NOTA:</strong> <em>Lo dicho en el último párrafo corresponde si se quiere exportar a EPUB o HTML ESTÁTICO, pero para la versión WEB DINÁMICA, por lo menos en Ficdownjs 0.9.1, al añadir un ancla que solo contenga conmutadores se debe especificar también como mínimo la escena actual como objetivo.</em></p>
 
@@ -137,7 +137,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Mi escena</span>
 
-La última palabra de este párrafo cambiará según el estado del jugador. La variable "mi-estado" es <span class="p">[</span><span class="nv">verdadera|falsa</span><span class="p">]</span> <span class="p">(</span><span class="sx">?mi-estado</span><span class="p">)</span>.
+La última palabra de este párrafo cambiará según el estado del jugador. La variable "mi-estado" es [verdadera|falsa] (?mi-estado).
 
 Este es un texto que cambiará según el estado de varias variables: <span class="p">[</span><span class="nv">Todo es verdadero|No todo es verdadero</span><span class="p">](</span><span class="sx">?mi-estado&amp;mi-estado-dos&amp;mi-estado-tres</span><span class="p">)</span>.
 

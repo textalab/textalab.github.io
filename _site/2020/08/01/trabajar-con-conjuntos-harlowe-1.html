@@ -12,19 +12,18 @@
 	
 
 	
-	<meta property="og:title" content="Textalab">
+	<meta property="og:title" content="Textalab • Twine Harlowe: La maravilla de los Arrays (1era Parte)">
 	
 
 	<link rel="icon" href="/favicon.png" type="image/png">
 
-	<title>Textalab</title>
-	<meta name="description" content="Textalab, experimentos lúdicos para la web. El laboratorio del texto en las afueras de Textagames.
-">
+	<title>Twine Harlowe: La maravilla de los Arrays (1era Parte)</title>
+	<meta name="description" content="Muchas veces, cuando trabajamos con datos, nos damos cuenta que algunos de estos se relacionan de alguna forma entre sí. Si para cada dato creamos una variab...">
 
 	<link rel='stylesheet' id='libretto-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Baskerville%3A400%2C700%2C400italic%7CPlayfair+Display%3A400%2C700%2C400italic%2C700italic%7CPlayfair+Display+SC%3A700%2C700italic%7CMontserrat%3A400%7CDroid+Sans+Mono%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all'>
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="https://textalab.github.io/table-of-contents.html">
+	<link rel="canonical" href="https://textalab.github.io/2020/08/01/trabajar-con-conjuntos-harlowe-1.html">
 	<link rel="alternate" type="application/rss+xml" title="Textalab" href="https://textalab.github.io/feed.xml">
 </head>
 
@@ -44,14 +43,9 @@
 
 	<div class="page-content">
 		<div class="wrapper">
-			<div class="table-of-contents">
-
-	<h1 class="page-heading">Tabla de Contenidos</h1>
-
-	<ul class="post-list">
-		
-		<li>
-			<span class="post-meta" style="font-style: italic;">• <time
+			<header class="post-header">
+	<div>
+		<span>Posteado el </span><span class="post-meta"><time
   datetime="2020-08-01 00:00:00 -0400"
 
   
@@ -66,34 +60,100 @@
   del
 
   2020
-</time> •</span>
+</time></span>
+	</div>
 
-			<h3><a href="/2020/08/01/trabajar-con-conjuntos-harlowe-1.html">Twine Harlowe: La maravilla de los Arrays (1era Parte)</a></h3>
-		</li>
+	<h1 class="post-title" itemprop="name headline">Twine Harlowe: La maravilla de los Arrays (1era Parte)</h1>
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="entry-content" itemprop="articleBody">
+		<p>Muchas veces, cuando trabajamos con datos, nos damos cuenta que algunos de estos se relacionan de alguna forma entre sí. Si para cada dato creamos una variable, a lo largo del código puede ser tedioso lidiar con ellos. Pero, ¿y si agrupamos los datos que tienen cosas en común, y trabajamos directamente sobre esos conjuntos? Eso, mis queridos amigos, son los arrays.</p>
+
+<p>Imaginemos que tenemos lo siguiente, cada vocal en una variable y al final las imprimimos todas en pantalla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocal1 to "A")
+(set: $vocal2 to "E")
+(set: $vocal3 to "I")
+(set: $vocal4 to "O")
+(set: $vocal5 to "U")
+
+Las vocales son: $vocal1, $vocal2, $vocal3, $vocal4, $vocal5.
+</code></pre></div></div>
+
+<p>Este mismo ejemplo expresado en un conjunto sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocales to (a: "A", "E", "I", "O", "U"))
+
+Las vocales son: $vocales.
+</code></pre></div></div>
+
+<p>Así es. Para crear un conjunto usamos <strong>(a:)</strong> dentro de <strong>(set:)</strong>. Y para imprimir los valores que contiene separados por comas bastará con poner directamente el nombre de la variable en el texto. Pero, ¿qué tal si solo queremos imprimir un valor específico? Digamos que solo queremos imprimir “I”.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>La tercera vocal es: (print: $vocales's 3).
+</code></pre></div></div>
+
+<p>Tenemos que auxiliarnos de la macro <strong>(print:)</strong>, seguido del nombre de la variable, más <strong>’s</strong>, más la posición del valor dentro del array.</p>
+
+<p><em>NOTA:</em> Para los que tienen conocimiento de programación es muy importante este detalle: <strong>el índice de los arrays empieza en 1, no en 0</strong>.</p>
+
+<p>Si queremos ver cuántos elementos tiene nuestro array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>La cantidad de vocales son: (print: $vocales's length).
+</code></pre></div></div>
+
+<p>Si queremos modificar un valor del array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Las vocales son: $vocales.
+
+(set: $vocales's 3 to "B")
+
+Las vocales son: $vocales.
+&lt;!--Aparecerá la "B" en vez de "I"--&gt;
+</code></pre></div></div>
+
+<p>Si queremos añadir un nuevo elemento al array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Las vocales son: $vocales.
+
+(set: $vocales to it + (a:"K"))
+
+Las vocales son: $vocales.
+&lt;!--Aparecerán las 5 vocales y la letra "K"--&gt;
+</code></pre></div></div>
+
+<p>Por si no se han dado cuenta, <strong>it</strong> representa lo mismo que $vocales, es lo mismo que escribir:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocales to $vocales + (a:"K"))
+</code></pre></div></div>
+
+<p>Para sumar un nuevo valor a un array, este debe estar dentro de un array, es súper importante tomarlo en cuenta, por eso K está encerrado en <strong>(a:)</strong>.</p>
+
+<p>Ya para cerrar esta introducción básica a los arrays, si queremos saber si un array contiene cierto valor, podemos hacerlo así:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(if: $vocales contains "K")[
+	Entre las vocales hay una K.
+]
+</code></pre></div></div>
+
+<p>En el próximo post veremos cómo usar todo esto en la práctica y como tratar con arrays multi-dimensionales.</p>
+
+	</div>
+</article>
+
+<div id="post-nav">
+	<div class="next">
 		
-		<li>
-			<span class="post-meta" style="font-style: italic;">• <time
-  datetime="2020-03-04 00:00:00 -0400"
+	</div>
 
-  
->
-
-  4 de
-
-  
-  marzo
-    
-
-  del
-
-  2020
-</time> •</span>
-
-			<h3><a href="/2020/03/04/manual-de-ficdown.html">Manual de Ficdown en Español</a></h3>
-		</li>
+	<div class="previous">
 		
-	</ul>
-
+		<a href="/2020/03/04/manual-de-ficdown.html">
+			<span>Entrada previa</span>
+			Manual de Ficdown en Español
+		</a>
+		
+	</div>
 </div>
 
 		</div>

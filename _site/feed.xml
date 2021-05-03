@@ -2,23 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Textalab</title>
-    <description>Textalab, experimentos lúdicos para la web. El labotarorio del texto para aprender jugando.
+    <description>Textalab, experimentos lúdicos para la web. El laboratorio del texto en las afueras de Textagames.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Mar 2020 21:01:49 -0400</pubDate>
-    <lastBuildDate>Wed, 04 Mar 2020 21:01:49 -0400</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <link>https://textalab.github.io/</link>
+    <atom:link href="https://textalab.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 03 May 2021 14:15:48 -0400</pubDate>
+    <lastBuildDate>Mon, 03 May 2021 14:15:48 -0400</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Twine Harlowe: La maravilla de los Arrays (1era Parte)</title>
+        <description>&lt;p&gt;Muchas veces, cuando trabajamos con datos, nos damos cuenta que algunos de estos se relacionan de alguna forma entre sí. Si para cada dato creamos una variable, a lo largo del código puede ser tedioso lidiar con ellos. Pero, ¿y si agrupamos los datos que tienen cosas en común, y trabajamos directamente sobre esos conjuntos? Eso, mis queridos amigos, son los arrays.&lt;/p&gt;
+
+&lt;p&gt;Imaginemos que tenemos lo siguiente, cada vocal en una variable y al final las imprimimos todas en pantalla:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(set: $vocal1 to &quot;A&quot;)
+(set: $vocal2 to &quot;E&quot;)
+(set: $vocal3 to &quot;I&quot;)
+(set: $vocal4 to &quot;O&quot;)
+(set: $vocal5 to &quot;U&quot;)
+
+Las vocales son: $vocal1, $vocal2, $vocal3, $vocal4, $vocal5.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Este mismo ejemplo expresado en un conjunto sería:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(set: $vocales to (a: &quot;A&quot;, &quot;E&quot;, &quot;I&quot;, &quot;O&quot;, &quot;U&quot;))
+
+Las vocales son: $vocales.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Así es. Para crear un conjunto usamos &lt;strong&gt;(a:)&lt;/strong&gt; dentro de &lt;strong&gt;(set:)&lt;/strong&gt;. Y para imprimir los valores que contiene separados por comas bastará con poner directamente el nombre de la variable en el texto. Pero, ¿qué tal si solo queremos imprimir un valor específico? Digamos que solo queremos imprimir “I”.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;La tercera vocal es: (print: $vocales's 3).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Tenemos que auxiliarnos de la macro &lt;strong&gt;(print:)&lt;/strong&gt;, seguido del nombre de la variable, más &lt;strong&gt;’s&lt;/strong&gt;, más la posición del valor dentro del array.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;NOTA:&lt;/em&gt; Para los que tienen conocimiento de programación es muy importante este detalle: &lt;strong&gt;el índice de los arrays empieza en 1, no en 0&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Si queremos ver cuántos elementos tiene nuestro array:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;La cantidad de vocales son: (print: $vocales's length).
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si queremos modificar un valor del array:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Las vocales son: $vocales.
+
+(set: $vocales's 3 to &quot;B&quot;)
+
+Las vocales son: $vocales.
+&amp;lt;!--Aparecerá la &quot;B&quot; en vez de &quot;I&quot;--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si queremos añadir un nuevo elemento al array:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Las vocales son: $vocales.
+
+(set: $vocales to it + (a:&quot;K&quot;))
+
+Las vocales son: $vocales.
+&amp;lt;!--Aparecerán las 5 vocales y la letra &quot;K&quot;--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Por si no se han dado cuenta, &lt;strong&gt;it&lt;/strong&gt; representa lo mismo que $vocales, es lo mismo que escribir:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(set: $vocales to $vocales + (a:&quot;K&quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Para sumar un nuevo valor a un array, este debe estar dentro de un array, es súper importante tomarlo en cuenta, por eso K está encerrado en &lt;strong&gt;(a:)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ya para cerrar esta introducción básica a los arrays, si queremos saber si un array contiene cierto valor, podemos hacerlo así:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(if: $vocales contains &quot;K&quot;)[
+	Entre las vocales hay una K.
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;En el próximo post veremos cómo usar todo esto en la práctica y como tratar con arrays multi-dimensionales.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 01 Aug 2020 00:00:00 -0400</pubDate>
+        <link>https://textalab.github.io/2020/08/01/trabajar-con-conjuntos-harlowe-1.html</link>
+        <guid isPermaLink="true">https://textalab.github.io/2020/08/01/trabajar-con-conjuntos-harlowe-1.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Manual de Ficdown en Español</title>
-        <description>&lt;p&gt;&lt;strong&gt;ANTES DE LEER:&lt;/strong&gt; &lt;em&gt;En el texto que sigue se le dice &lt;strong&gt;ancla&lt;/strong&gt; al texto encerrado entre corchetes (&lt;code class=&quot;highlighter-rouge&quot;&gt;[ancla]&lt;/code&gt;) y &lt;strong&gt;enlace&lt;/strong&gt; al texto encerrado entre paréntesis que sigue al ancla(&lt;code class=&quot;highlighter-rouge&quot;&gt;[ancla](enlace)&lt;/code&gt;), también se le llama &lt;strong&gt;ancla&lt;/strong&gt; a ambas cosas en conjunto. Cuando se habla de &lt;strong&gt;descripción&lt;/strong&gt;, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.&lt;/em&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;ANTES DE LEER:&lt;/strong&gt; &lt;em&gt;En el texto que sigue se le dice &lt;strong&gt;ancla&lt;/strong&gt; al texto encerrado entre corchetes (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ancla]&lt;/code&gt;) y &lt;strong&gt;enlace&lt;/strong&gt; al texto encerrado entre paréntesis que sigue al ancla(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[ancla](enlace)&lt;/code&gt;), también se le llama &lt;strong&gt;ancla&lt;/strong&gt; a ambas cosas en conjunto. Cuando se habla de &lt;strong&gt;descripción&lt;/strong&gt;, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;preliminar&quot;&gt;Preliminar&lt;/h1&gt;
 
 &lt;h2 id=&quot;qué-es-ficdown&quot;&gt;¿Qué es Ficdown?&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://ficdown.com/&quot;&gt;Ficdown&lt;/a&gt; es un conjunto de estándares que utiliza la sintaxis del formato Markdown para crear ficción interactiva basada en elecciones . El formateo del texto se realiza utilizando Markdown estándar, con algunos elementos que adquieren propiedades adicionales (por ejemplo, se utilizan encabezados de nivel dos &lt;code class=&quot;highlighter-rouge&quot;&gt;##&lt;/code&gt; para separar las escenas).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ficdown.com/&quot;&gt;Ficdown&lt;/a&gt; es un conjunto de estándares que utiliza la sintaxis del formato Markdown para crear ficción interactiva basada en elecciones . El formateo del texto se realiza utilizando Markdown estándar, con algunos elementos que adquieren propiedades adicionales (por ejemplo, se utilizan encabezados de nivel dos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;##&lt;/code&gt; para separar las escenas).&lt;/p&gt;
 
 &lt;h2 id=&quot;por-qué-ficdown&quot;&gt;¿Por qué Ficdown?&lt;/h2&gt;
 
@@ -38,7 +117,7 @@
 
 &lt;h2 id=&quot;historia&quot;&gt;Historia&lt;/h2&gt;
 
-&lt;p&gt;Un bloque &lt;strong&gt;Historia&lt;/strong&gt; se define mediante un encabezado de nivel uno (&lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt;). El título de la historia debe ser un &lt;a href=&quot;#anclas&quot;&gt;ancla&lt;/a&gt; que se vincule con la primera &lt;a href=&quot;#escenas&quot;&gt;escena&lt;/a&gt;. El ancla no debe contener &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt; ni &lt;a href=&quot;#palancas&quot;&gt;conmutadores&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Un bloque &lt;strong&gt;Historia&lt;/strong&gt; se define mediante un encabezado de nivel uno (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt;). El título de la historia debe ser un &lt;a href=&quot;#anclas&quot;&gt;ancla&lt;/a&gt; que se vincule con la primera &lt;a href=&quot;#escenas&quot;&gt;escena&lt;/a&gt;. El ancla no debe contener &lt;a href=&quot;#condicionales&quot;&gt;condicionales&lt;/a&gt; ni &lt;a href=&quot;#palancas&quot;&gt;conmutadores&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;El texto del bloque de Historia será lo primero que se mostrará al jugador y no debe contener ningún ancla en la descripción.&lt;/p&gt;
 
@@ -49,7 +128,7 @@ Bienvenido a un asombroso juego por &lt;span class=&quot;ge&quot;&gt;*Algún Aut
 
 &lt;h2 id=&quot;escenas&quot;&gt;Escenas&lt;/h2&gt;
 
-&lt;p&gt;Las &lt;strong&gt;escenas&lt;/strong&gt; están definidas por encabezados de nivel dos (&lt;code class=&quot;highlighter-rouge&quot;&gt;##&lt;/code&gt;). Las descripciones de las escenas pueden contener bloques &lt;a href=&quot;#first-seen&quot;&gt;first-seen&lt;/a&gt; y &lt;a href=&quot;#anclas&quot;&gt;anclas&lt;/a&gt; para cambiar la descripción según el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt; o algún enlace que apunte a otra escena.&lt;/p&gt;
+&lt;p&gt;Las &lt;strong&gt;escenas&lt;/strong&gt; están definidas por encabezados de nivel dos (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;##&lt;/code&gt;). Las descripciones de las escenas pueden contener bloques &lt;a href=&quot;#first-seen&quot;&gt;first-seen&lt;/a&gt; y &lt;a href=&quot;#anclas&quot;&gt;anclas&lt;/a&gt; para cambiar la descripción según el &lt;a href=&quot;#estado-del-jugador&quot;&gt;estado del jugador&lt;/a&gt; o algún enlace que apunte a otra escena.&lt;/p&gt;
 
 &lt;p&gt;Para mostrar un título distinto al nombre de la escena, puede envolver el nombre de la escena en un &lt;a href=&quot;#anclas&quot;&gt;ancla&lt;/a&gt; y especificar el texto que se mostrará en pantalla como el título del ancla.&lt;/p&gt;
 
@@ -83,7 +162,7 @@ El jugador verá esto si tanto el &quot;estado-uno&quot; como el &quot;estado-do
 
 &lt;h2 id=&quot;first-seen&quot;&gt;First Seen&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;First Seen&lt;/strong&gt; o &lt;strong&gt;visto por primera vez&lt;/strong&gt;. El texto descriptivo precedido por blockquote (&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;) solo se mostrará al jugador la primera vez que ingrese a la escena.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;First Seen&lt;/strong&gt; o &lt;strong&gt;visto por primera vez&lt;/strong&gt;. El texto descriptivo precedido por blockquote (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;) solo se mostrará al jugador la primera vez que ingrese a la escena.&lt;/p&gt;
 
 &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;## Mi escena&lt;/span&gt;
 &lt;span class=&quot;gt&quot;&gt;
@@ -121,7 +200,7 @@ Este texto se mostrará al jugador cada vez que active &quot;mi-estado&quot;. Es
 
 &lt;p&gt;El texto dentro del ancla no puede contener otras anclas. Para una modificación más compleja de las descripciones de escenas, en su lugar debe usar &lt;a href=&quot;#escenas-condicionales&quot;&gt;escenas condicionales&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Texto a mostrar cuando se cumplen las condiciones|Texto a mostrar cuando no se cumplen las condiciones](/escena-objetivo?primera-condicional&amp;amp;segunda-condicional#palanca-uno+palanca-dos)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Texto a mostrar cuando se cumplen las condiciones|Texto a mostrar cuando no se cumplen las condiciones](/escena-objetivo?primera-condicional&amp;amp;segunda-condicional#palanca-uno+palanca-dos)&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;objetivos&quot;&gt;Objetivos&lt;/h2&gt;
 
@@ -129,7 +208,7 @@ Este texto se mostrará al jugador cada vez que active &quot;mi-estado&quot;. Es
 
 &lt;p&gt;Las anclas pueden tener como máximo un objetivo.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Ir a la escena dos](/escena-dos)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Ir a la escena dos](/escena-dos)&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;palancas&quot;&gt;Palancas&lt;/h2&gt;
 
@@ -137,7 +216,7 @@ Este texto se mostrará al jugador cada vez que active &quot;mi-estado&quot;. Es
 
 &lt;p&gt;Las anclas con conmutadores siempre se mostrarán como enlaces en los que se puede hacer clic. Si el ancla no tiene un objetivo, al hacer clic en el enlace cambiará el estado de las variables y luego redirigirá al jugador a la escena actual.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Conmutar mis variables](#palanca-uno+palanca-dos)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Conmutar mis variables](#palanca-uno+palanca-dos)&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTA:&lt;/strong&gt; &lt;em&gt;Lo dicho en el último párrafo corresponde si se quiere exportar a EPUB o HTML ESTÁTICO, pero para la versión WEB DINÁMICA, por lo menos en Ficdownjs 0.9.1, al añadir un ancla que solo contenga conmutadores se debe especificar también como mínimo la escena actual como objetivo.&lt;/em&gt;&lt;/p&gt;
 
@@ -151,7 +230,7 @@ Este texto se mostrará al jugador cada vez que active &quot;mi-estado&quot;. Es
 
 &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;## Mi escena&lt;/span&gt;
 
-La última palabra de este párrafo cambiará según el estado del jugador. La variable &quot;mi-estado&quot; es &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;verdadera|falsa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;?mi-estado&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;.
+La última palabra de este párrafo cambiará según el estado del jugador. La variable &quot;mi-estado&quot; es [verdadera|falsa] (?mi-estado).
 
 Este es un texto que cambiará según el estado de varias variables: &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Todo es verdadero|No todo es verdadero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;?mi-estado&amp;amp;mi-estado-dos&amp;amp;mi-estado-tres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;.
 
@@ -194,8 +273,8 @@ Los enlaces al final de esta descripción también cambiarán según el estado d
 &lt;p&gt;&lt;strong&gt;NOTA:&lt;/strong&gt; &lt;em&gt;Al compilar la historia en EPUB, puede pasar el indicador DEBUG que mostrará la información del estado del jugador en la parte inferior de cada página de su historia. Esto puede ser útil para rastrear enlaces o historias que no se comportan de la manera que se esperaba.&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 04 Mar 2020 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/2020/03/04/manual-de-ficdown.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2020/03/04/manual-de-ficdown.html</guid>
+        <link>https://textalab.github.io/2020/03/04/manual-de-ficdown.html</link>
+        <guid isPermaLink="true">https://textalab.github.io/2020/03/04/manual-de-ficdown.html</guid>
         
         
       </item>

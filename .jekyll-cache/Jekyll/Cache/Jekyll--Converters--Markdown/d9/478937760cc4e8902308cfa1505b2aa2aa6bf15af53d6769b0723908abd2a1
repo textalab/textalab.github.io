@@ -1,0 +1,70 @@
+I"�<p>Muchas veces, cuando trabajamos con datos, nos damos cuenta que algunos de estos se relacionan de alguna forma entre sí. Si para cada dato creamos una variable, a lo largo del código puede ser tedioso lidiar con ellos. Pero, ¿y si agrupamos los datos que tienen cosas en común, y trabajamos directamente sobre esos conjuntos? Eso, mis queridos amigos, son los arrays.</p>
+
+<p>Imaginemos que tenemos lo siguiente, cada vocal en una variable y al final las imprimimos todas en pantalla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocal1 to "A")
+(set: $vocal2 to "E")
+(set: $vocal3 to "I")
+(set: $vocal4 to "O")
+(set: $vocal5 to "U")
+
+Las vocales son: $vocal1, $vocal2, $vocal3, $vocal4, $vocal5.
+</code></pre></div></div>
+
+<p>Este mismo ejemplo expresado en un conjunto sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocales to (a: "A", "E", "I", "O", "U"))
+
+Las vocales son: $vocales.
+</code></pre></div></div>
+
+<p>Así es. Para crear un conjunto usamos <strong>(a:)</strong> dentro de <strong>(set:)</strong>. Y para imprimir los valores que contiene separados por comas bastará con poner directamente el nombre de la variable en el texto. Pero, ¿qué tal si solo queremos imprimir un valor específico? Digamos que solo queremos imprimir “I”.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>La tercera vocal es: (print: $vocales's 3).
+</code></pre></div></div>
+
+<p>Tenemos que auxiliarnos de la macro <strong>(print:)</strong>, seguido del nombre de la variable, más <strong>’s</strong>, más la posición del valor dentro del array.</p>
+
+<p><em>NOTA:</em> Para los que tienen conocimiento de programación es muy importante este detalle: <strong>el índice de los arrays empieza en 1, no en 0</strong>.</p>
+
+<p>Si queremos ver cuántos elementos tiene nuestro array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>La cantidad de vocales son: (print: $vocales's length).
+</code></pre></div></div>
+
+<p>Si queremos modificar un valor del array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Las vocales son: $vocales.
+
+(set: $vocales's 3 to "B")
+
+Las vocales son: $vocales.
+&lt;!--Aparecerá la "B" en vez de "I"--&gt;
+</code></pre></div></div>
+
+<p>Si queremos añadir un nuevo elemento al array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Las vocales son: $vocales.
+
+(set: $vocales to it + (a:"K"))
+
+Las vocales son: $vocales.
+&lt;!--Aparecerán las 5 vocales y la letra "K"--&gt;
+</code></pre></div></div>
+
+<p>Por si no se han dado cuenta, <strong>it</strong> representa lo mismo que $vocales, es lo mismo que escribir:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocales to $vocales + (a:"K"))
+</code></pre></div></div>
+
+<p>Para sumar un nuevo valor a un array, este debe estar dentro de un array, es súper importante tomarlo en cuenta, por eso K está encerrado en <strong>(a:)</strong>.</p>
+
+<p>Ya para cerrar esta introducción básica a los arrays, si queremos saber si un array contiene cierto valor, podemos hacerlo así:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(if: $vocales contains "K")[
+	Entre las vocales hay una K.
+]
+</code></pre></div></div>
+
+<p>En el próximo post veremos cómo usar todo esto en la práctica y como tratar con arrays multi-dimensionales.</p>
+:ET

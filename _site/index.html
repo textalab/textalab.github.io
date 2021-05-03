@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#943526">
+	<meta name="theme-color" content="#000000">
 
 	
-	<meta property="og:image" content="http://localhost:4000/thumbnail.jpg">
+	<meta property="og:image" content="https://textalab.github.io/thumbnail.jpg">
 	
 
 	
@@ -18,14 +18,14 @@
 	<link rel="icon" href="/favicon.png" type="image/png">
 
 	<title>Textalab</title>
-	<meta name="description" content="Textalab, experimentos lúdicos para la web. El labotarorio del texto para aprender jugando.
+	<meta name="description" content="Textalab, experimentos lúdicos para la web. El laboratorio del texto en las afueras de Textagames.
 ">
 
 	<link rel='stylesheet' id='libretto-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Baskerville%3A400%2C700%2C400italic%7CPlayfair+Display%3A400%2C700%2C400italic%2C700italic%7CPlayfair+Display+SC%3A700%2C700italic%7CMontserrat%3A400%7CDroid+Sans+Mono%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all'>
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://localhost:4000/">
-	<link rel="alternate" type="application/rss+xml" title="Textalab" href="http://localhost:4000/feed.xml">
+	<link rel="canonical" href="https://textalab.github.io/">
+	<link rel="alternate" type="application/rss+xml" title="Textalab" href="https://textalab.github.io/feed.xml">
 </head>
 
 
@@ -35,7 +35,7 @@
 
 	<div class="wrapper">
 
-		<a class="site-title" href="/">Textalab|</a>
+		<a class="site-title" href="/">Textalab<span id="blinking-cursor">|</span></a>
 
 	</div>
 
@@ -47,6 +47,110 @@
 			<div class="home">
 
 	<ul class="post-list">
+		
+		<li>
+			<article>
+				<header class="post-header">
+					<div>
+						<span>Posteado el </span><span class="post-meta"><time
+  datetime="2020-08-01 00:00:00 -0400"
+
+  
+>
+
+  1 de
+
+  
+  agosto
+    
+
+  del
+
+  2020
+</time></span>
+					</div>
+
+					<h2>
+						<a class="post-link" href="/2020/08/01/trabajar-con-conjuntos-harlowe-1.html">Twine Harlowe: La maravilla de los Arrays (1era Parte)</a>
+					</h2>
+				</header>
+
+				<div class="entry-content">
+					<!--<p>Muchas veces, cuando trabajamos con datos, nos damos cuenta que algunos de estos se relacionan de alguna forma entre sí. Si para cada dato creamos una variable, a lo largo del código puede ser tedioso lidiar con ellos. Pero, ¿y si agrupamos los datos que tienen cosas en común, y trabajamos directamente sobre esos conjuntos? Eso, mis queridos amigos, son los arrays.</p>
+
+<p>Imaginemos que tenemos lo siguiente, cada vocal en una variable y al final las imprimimos todas en pantalla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocal1 to "A")
+(set: $vocal2 to "E")
+(set: $vocal3 to "I")
+(set: $vocal4 to "O")
+(set: $vocal5 to "U")
+
+Las vocales son: $vocal1, $vocal2, $vocal3, $vocal4, $vocal5.
+</code></pre></div></div>
+
+<p>Este mismo ejemplo expresado en un conjunto sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocales to (a: "A", "E", "I", "O", "U"))
+
+Las vocales son: $vocales.
+</code></pre></div></div>
+
+<p>Así es. Para crear un conjunto usamos <strong>(a:)</strong> dentro de <strong>(set:)</strong>. Y para imprimir los valores que contiene separados por comas bastará con poner directamente el nombre de la variable en el texto. Pero, ¿qué tal si solo queremos imprimir un valor específico? Digamos que solo queremos imprimir “I”.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>La tercera vocal es: (print: $vocales's 3).
+</code></pre></div></div>
+
+<p>Tenemos que auxiliarnos de la macro <strong>(print:)</strong>, seguido del nombre de la variable, más <strong>’s</strong>, más la posición del valor dentro del array.</p>
+
+<p><em>NOTA:</em> Para los que tienen conocimiento de programación es muy importante este detalle: <strong>el índice de los arrays empieza en 1, no en 0</strong>.</p>
+
+<p>Si queremos ver cuántos elementos tiene nuestro array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>La cantidad de vocales son: (print: $vocales's length).
+</code></pre></div></div>
+
+<p>Si queremos modificar un valor del array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Las vocales son: $vocales.
+
+(set: $vocales's 3 to "B")
+
+Las vocales son: $vocales.
+&lt;!--Aparecerá la "B" en vez de "I"--&gt;
+</code></pre></div></div>
+
+<p>Si queremos añadir un nuevo elemento al array:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Las vocales son: $vocales.
+
+(set: $vocales to it + (a:"K"))
+
+Las vocales son: $vocales.
+&lt;!--Aparecerán las 5 vocales y la letra "K"--&gt;
+</code></pre></div></div>
+
+<p>Por si no se han dado cuenta, <strong>it</strong> representa lo mismo que $vocales, es lo mismo que escribir:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(set: $vocales to $vocales + (a:"K"))
+</code></pre></div></div>
+
+<p>Para sumar un nuevo valor a un array, este debe estar dentro de un array, es súper importante tomarlo en cuenta, por eso K está encerrado en <strong>(a:)</strong>.</p>
+
+<p>Ya para cerrar esta introducción básica a los arrays, si queremos saber si un array contiene cierto valor, podemos hacerlo así:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(if: $vocales contains "K")[
+	Entre las vocales hay una K.
+]
+</code></pre></div></div>
+
+<p>En el próximo post veremos cómo usar todo esto en la práctica y como tratar con arrays multi-dimensionales.</p>
+--><p>Muchas veces, cuando trabajamos con datos, nos damos cuenta que algunos de estos se relacionan de alguna forma entre sí. Si para cada dato creamos una variable, a lo largo del código puede ser tedioso lidiar con ellos. Pero, ¿y si agrupamos los datos que tienen cosas en común, y trabajamos directamente sobre esos conjuntos? Eso, mis queridos amigos, son los arrays.</p>
+
+					<a class="leer-mas" href="/2020/08/01/trabajar-con-conjuntos-harlowe-1.html">Leer más</a>
+				</div>
+			</article>
+		</li>
 		
 		<li>
 			<article>
@@ -76,13 +180,13 @@
 				</header>
 
 				<div class="entry-content">
-					<p><strong>ANTES DE LEER:</strong> <em>En el texto que sigue se le dice <strong>ancla</strong> al texto encerrado entre corchetes (<code class="highlighter-rouge">[ancla]</code>) y <strong>enlace</strong> al texto encerrado entre paréntesis que sigue al ancla(<code class="highlighter-rouge">[ancla](enlace)</code>), también se le llama <strong>ancla</strong> a ambas cosas en conjunto. Cuando se habla de <strong>descripción</strong>, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.</em></p>
+					<!--<p><strong>ANTES DE LEER:</strong> <em>En el texto que sigue se le dice <strong>ancla</strong> al texto encerrado entre corchetes (<code class="language-plaintext highlighter-rouge">[ancla]</code>) y <strong>enlace</strong> al texto encerrado entre paréntesis que sigue al ancla(<code class="language-plaintext highlighter-rouge">[ancla](enlace)</code>), también se le llama <strong>ancla</strong> a ambas cosas en conjunto. Cuando se habla de <strong>descripción</strong>, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.</em></p>
 
 <h1 id="preliminar">Preliminar</h1>
 
 <h2 id="qué-es-ficdown">¿Qué es Ficdown?</h2>
 
-<p><a href="https://ficdown.com/">Ficdown</a> es un conjunto de estándares que utiliza la sintaxis del formato Markdown para crear ficción interactiva basada en elecciones . El formateo del texto se realiza utilizando Markdown estándar, con algunos elementos que adquieren propiedades adicionales (por ejemplo, se utilizan encabezados de nivel dos <code class="highlighter-rouge">##</code> para separar las escenas).</p>
+<p><a href="https://ficdown.com/">Ficdown</a> es un conjunto de estándares que utiliza la sintaxis del formato Markdown para crear ficción interactiva basada en elecciones . El formateo del texto se realiza utilizando Markdown estándar, con algunos elementos que adquieren propiedades adicionales (por ejemplo, se utilizan encabezados de nivel dos <code class="language-plaintext highlighter-rouge">##</code> para separar las escenas).</p>
 
 <h2 id="por-qué-ficdown">¿Por qué Ficdown?</h2>
 
@@ -102,7 +206,7 @@
 
 <h2 id="historia">Historia</h2>
 
-<p>Un bloque <strong>Historia</strong> se define mediante un encabezado de nivel uno (<code class="highlighter-rouge">#</code>). El título de la historia debe ser un <a href="#anclas">ancla</a> que se vincule con la primera <a href="#escenas">escena</a>. El ancla no debe contener <a href="#condicionales">condicionales</a> ni <a href="#palancas">conmutadores</a>.</p>
+<p>Un bloque <strong>Historia</strong> se define mediante un encabezado de nivel uno (<code class="language-plaintext highlighter-rouge">#</code>). El título de la historia debe ser un <a href="#anclas">ancla</a> que se vincule con la primera <a href="#escenas">escena</a>. El ancla no debe contener <a href="#condicionales">condicionales</a> ni <a href="#palancas">conmutadores</a>.</p>
 
 <p>El texto del bloque de Historia será lo primero que se mostrará al jugador y no debe contener ningún ancla en la descripción.</p>
 
@@ -113,7 +217,7 @@ Bienvenido a un asombroso juego por <span class="ge">*Algún Autor*</span>.
 
 <h2 id="escenas">Escenas</h2>
 
-<p>Las <strong>escenas</strong> están definidas por encabezados de nivel dos (<code class="highlighter-rouge">##</code>). Las descripciones de las escenas pueden contener bloques <a href="#first-seen">first-seen</a> y <a href="#anclas">anclas</a> para cambiar la descripción según el <a href="#estado-del-jugador">estado del jugador</a> o algún enlace que apunte a otra escena.</p>
+<p>Las <strong>escenas</strong> están definidas por encabezados de nivel dos (<code class="language-plaintext highlighter-rouge">##</code>). Las descripciones de las escenas pueden contener bloques <a href="#first-seen">first-seen</a> y <a href="#anclas">anclas</a> para cambiar la descripción según el <a href="#estado-del-jugador">estado del jugador</a> o algún enlace que apunte a otra escena.</p>
 
 <p>Para mostrar un título distinto al nombre de la escena, puede envolver el nombre de la escena en un <a href="#anclas">ancla</a> y especificar el texto que se mostrará en pantalla como el título del ancla.</p>
 
@@ -147,7 +251,7 @@ El jugador verá esto si tanto el "estado-uno" como el "estado-dos" se han activ
 
 <h2 id="first-seen">First Seen</h2>
 
-<p><strong>First Seen</strong> o <strong>visto por primera vez</strong>. El texto descriptivo precedido por blockquote (<code class="highlighter-rouge">&gt;</code>) solo se mostrará al jugador la primera vez que ingrese a la escena.</p>
+<p><strong>First Seen</strong> o <strong>visto por primera vez</strong>. El texto descriptivo precedido por blockquote (<code class="language-plaintext highlighter-rouge">&gt;</code>) solo se mostrará al jugador la primera vez que ingrese a la escena.</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Mi escena</span>
 <span class="gt">
@@ -185,7 +289,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <p>El texto dentro del ancla no puede contener otras anclas. Para una modificación más compleja de las descripciones de escenas, en su lugar debe usar <a href="#escenas-condicionales">escenas condicionales</a>.</p>
 
-<p><code class="highlighter-rouge">[Texto a mostrar cuando se cumplen las condiciones|Texto a mostrar cuando no se cumplen las condiciones](/escena-objetivo?primera-condicional&amp;segunda-condicional#palanca-uno+palanca-dos)</code></p>
+<p><code class="language-plaintext highlighter-rouge">[Texto a mostrar cuando se cumplen las condiciones|Texto a mostrar cuando no se cumplen las condiciones](/escena-objetivo?primera-condicional&amp;segunda-condicional#palanca-uno+palanca-dos)</code></p>
 
 <h2 id="objetivos">Objetivos</h2>
 
@@ -193,7 +297,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <p>Las anclas pueden tener como máximo un objetivo.</p>
 
-<p><code class="highlighter-rouge">[Ir a la escena dos](/escena-dos)</code></p>
+<p><code class="language-plaintext highlighter-rouge">[Ir a la escena dos](/escena-dos)</code></p>
 
 <h2 id="palancas">Palancas</h2>
 
@@ -201,7 +305,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <p>Las anclas con conmutadores siempre se mostrarán como enlaces en los que se puede hacer clic. Si el ancla no tiene un objetivo, al hacer clic en el enlace cambiará el estado de las variables y luego redirigirá al jugador a la escena actual.</p>
 
-<p><code class="highlighter-rouge">[Conmutar mis variables](#palanca-uno+palanca-dos)</code></p>
+<p><code class="language-plaintext highlighter-rouge">[Conmutar mis variables](#palanca-uno+palanca-dos)</code></p>
 
 <p><strong>NOTA:</strong> <em>Lo dicho en el último párrafo corresponde si se quiere exportar a EPUB o HTML ESTÁTICO, pero para la versión WEB DINÁMICA, por lo menos en Ficdownjs 0.9.1, al añadir un ancla que solo contenga conmutadores se debe especificar también como mínimo la escena actual como objetivo.</em></p>
 
@@ -215,7 +319,7 @@ Este texto se mostrará al jugador cada vez que active "mi-estado". Esta <span c
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Mi escena</span>
 
-La última palabra de este párrafo cambiará según el estado del jugador. La variable "mi-estado" es <span class="p">[</span><span class="nv">verdadera|falsa</span><span class="p">]</span> <span class="p">(</span><span class="sx">?mi-estado</span><span class="p">)</span>.
+La última palabra de este párrafo cambiará según el estado del jugador. La variable "mi-estado" es [verdadera|falsa] (?mi-estado).
 
 Este es un texto que cambiará según el estado de varias variables: <span class="p">[</span><span class="nv">Todo es verdadero|No todo es verdadero</span><span class="p">](</span><span class="sx">?mi-estado&amp;mi-estado-dos&amp;mi-estado-tres</span><span class="p">)</span>.
 
@@ -256,7 +360,9 @@ Los enlaces al final de esta descripción también cambiarán según el estado d
 <p>Las anclas condicionales envueltas alrededor de los nombres de las escenas se usan para definir <a href="#escenas-condicionales">escenas condicionales</a>.</p>
 
 <p><strong>NOTA:</strong> <em>Al compilar la historia en EPUB, puede pasar el indicador DEBUG que mostrará la información del estado del jugador en la parte inferior de cada página de su historia. Esto puede ser útil para rastrear enlaces o historias que no se comportan de la manera que se esperaba.</em></p>
+--><p><strong>ANTES DE LEER:</strong> <em>En el texto que sigue se le dice <strong>ancla</strong> al texto encerrado entre corchetes (<code class="language-plaintext highlighter-rouge">[ancla]</code>) y <strong>enlace</strong> al texto encerrado entre paréntesis que sigue al ancla(<code class="language-plaintext highlighter-rouge">[ancla](enlace)</code>), también se le llama <strong>ancla</strong> a ambas cosas en conjunto. Cuando se habla de <strong>descripción</strong>, se refiere al contenido tanto de las escenas como de las acciones y el texto introductorio de la historia.</em></p>
 
+					<a class="leer-mas" href="/2020/03/04/manual-de-ficdown.html">Leer más</a>
 				</div>
 			</article>
 		</li>
@@ -315,7 +421,7 @@ Los enlaces al final de esta descripción también cambiarán según el estado d
 			</div>
 
 			<div class="footer-col footer-col-3">
-				<p>Textalab, experimentos lúdicos para la web. El labotarorio del texto para aprender jugando.
+				<p>Textalab, experimentos lúdicos para la web. El laboratorio del texto en las afueras de Textagames.
 </p>
 			</div>
 		</div>
